@@ -27,10 +27,9 @@ app.get('/', (req, res) =>
 
 
 //Get Route for 404 page
-app.get('/404', (req, res) =>
-  res.sendFile(path.join(__dirname, '/public/404.html'))
+app.get('*', (req, res) =>
+  res.status(404).sendFile(path.join(__dirname, '/public/404.html'))
 );
-
 
 
 app.get('/api/diagnostics', (req, res) => res.json(diagnosticsData));
